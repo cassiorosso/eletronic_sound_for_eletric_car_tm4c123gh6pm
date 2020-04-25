@@ -1,0 +1,389 @@
+###############################################################################
+#
+# IAR ELF Linker V8.11.2.13589/W32 for ARM                04/Dec/2018  15:19:44
+# Copyright 2007-2017 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Cássio Augusto Rosso\Google Drive\Engenharia Elétrica\VIII
+#        Semestre\Microprocessadores
+#        II\Lab\CASSIOROSSO\LAB_ARM\PROJETOS\TCC_v1\Debug\Exe\TCC_v1.out
+#    Map file     =  
+#        C:\Users\Cássio Augusto Rosso\Google Drive\Engenharia Elétrica\VIII
+#        Semestre\Microprocessadores
+#        II\Lab\CASSIOROSSO\LAB_ARM\PROJETOS\TCC_v1\Debug\List\TCC_v1.map
+#    Command line =  
+#        -f C:\Users\CSSIOA~2\AppData\Local\Temp\EW574E.tmp ("C:\Users\Cássio
+#        Augusto Rosso\Google Drive\Engenharia Elétrica\VIII
+#        Semestre\Microprocessadores
+#        II\Lab\CASSIOROSSO\LAB_ARM\BIBLIOTECAS\driverlib\ewarm\Exe\driverlib.a"
+#        "C:\Users\Cássio Augusto Rosso\Google Drive\Engenharia Elétrica\VIII
+#        Semestre\Microprocessadores
+#        II\Lab\CASSIOROSSO\LAB_ARM\PROJETOS\TCC_v1\Debug\Obj\startup_ewarm.o"
+#        "C:\Users\Cássio Augusto Rosso\Google Drive\Engenharia Elétrica\VIII
+#        Semestre\Microprocessadores
+#        II\Lab\CASSIOROSSO\LAB_ARM\PROJETOS\TCC_v1\Debug\Obj\TCC_v1.o"
+#        "C:\Users\Cássio Augusto Rosso\Google Drive\Engenharia Elétrica\VIII
+#        Semestre\Microprocessadores
+#        II\Lab\CASSIOROSSO\LAB_ARM\PROJETOS\TCC_v1\Debug\Obj\uartstdio.o" -o
+#        "C:\Users\Cássio Augusto Rosso\Google Drive\Engenharia Elétrica\VIII
+#        Semestre\Microprocessadores
+#        II\Lab\CASSIOROSSO\LAB_ARM\PROJETOS\TCC_v1\Debug\Exe\TCC_v1.out" --map
+#        "C:\Users\Cássio Augusto Rosso\Google Drive\Engenharia Elétrica\VIII
+#        Semestre\Microprocessadores
+#        II\Lab\CASSIOROSSO\LAB_ARM\PROJETOS\TCC_v1\Debug\List\TCC_v1.map"
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.0\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** MESSAGES
+***
+
+Warning[Lt009]: Inconsistent wchar_t size
+            adc.o(driverlib.a) and 8 other objects have wchar_t size 16 bits
+            startup_ewarm.o and 15 other objects have wchar_t size 32 bits
+
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x20007fff] {
+          rw, block CSTACK, block HEAP };
+do not initialize { section .noinit };
+initialize by copy { rw };
+
+  Section            Kind        Address     Size  Object
+  -------            ----        -------     ----  ------
+"A0":                                       0x26c
+  .intvec            const    0x00000000    0x26c  startup_ewarm.o [1]
+                            - 0x0000026c    0x26c
+
+"P1":                                     0x26ee8
+  .rodata            const    0x0000026c  0x1c7a0  TCC_v1.o [1]
+  .rodata            const    0x0001ca0c   0x2cf8  TCC_v1.o [1]
+  .text              ro code  0x0001f704   0x2830  TCC_v1.o [1]
+  .text              ro code  0x00021f34     0x40  systick.o [4]
+  .text              ro code  0x00021f74    0x338  sysctl.o [4]
+  .text              ro code  0x000222ac     0xc6  timer.o [4]
+  .text              ro code  0x00022374     0xa8  uart.o [4]
+  .text              ro code  0x0002241c    0x264  gpio.o [4]
+  .text              ro code  0x00022680     0x50  uartstdio.o [1]
+  .text              ro code  0x000226d0     0xa0  interrupt.o [4]
+  .text              ro code  0x00022770     0x58  ssi.o [4]
+  .text              ro code  0x000227c8     0x1a  U32ToDbl.o [5]
+  .text              ro code  0x000227e4    0x1a2  DblMul.o [5]
+  .text              ro code  0x00022988    0x178  DblAdd.o [5]
+  .text              ro code  0x00022b00     0x3a  DblToS32.o [5]
+  .text              ro code  0x00022b3c    0x128  adc.o [4]
+  .text              ro code  0x00022c64     0xd2  DblSub.o [5]
+  .rodata            const    0x00022d38   0x1944  TCC_v1.o [1]
+  .rodata            const    0x0002467c   0x1348  TCC_v1.o [1]
+  .rodata            const    0x000259c4    0xb00  TCC_v1.o [1]
+  .rodata            const    0x000264c4    0xa50  TCC_v1.o [1]
+  .rodata            const    0x00026f14     0x54  TCC_v1.o [1]
+  .rodata            const    0x00026f68     0x54  TCC_v1.o [1]
+  .text              ro code  0x00026fbc     0x40  zero_init3.o [6]
+  .rodata            const    0x00026ffc     0x2c  TCC_v1.o [1]
+  .text              ro code  0x00027028     0x2c  copy_init3.o [6]
+  .text              ro code  0x00027054     0x28  data_init.o [6]
+  .text              ro code  0x0002707c     0x22  fpinit_M.o [5]
+  .iar.init_table    const    0x000270a0     0x24  - Linker created -
+  .text              ro code  0x000270c4     0x1e  startup_ewarm.o [1]
+  .text              ro code  0x000270e2      0xc  cstartup_M.o [6]
+  .text              ro code  0x000270f0     0x1a  cmain.o [6]
+  .text              ro code  0x0002710a      0x4  low_level_init.o [3]
+  .text              ro code  0x0002710e      0x4  exit.o [3]
+  .text              ro code  0x00027114      0xa  cexit.o [6]
+  .text              ro code  0x00027120     0x14  exit.o [7]
+  .rodata            const    0x00027134      0xc  uartstdio.o [1]
+  .rodata            const    0x00027140      0xc  uartstdio.o [1]
+  Initializer bytes  const    0x0002714c      0x8  <for P2-1>
+  .rodata            const    0x00027154      0x0  zero_init3.o [6]
+  .rodata            const    0x00027154      0x0  copy_init3.o [6]
+                            - 0x00027154  0x26ee8
+
+"P2", part 1 of 3:                            0x8
+  P2-1                        0x20000000      0x5  <Init block>
+    .data            inited   0x20000000      0x2  TCC_v1.o [1]
+    .data            inited   0x20000002      0x1  TCC_v1.o [1]
+    .data            inited   0x20000003      0x1  TCC_v1.o [1]
+    .data            inited   0x20000004      0x1  TCC_v1.o [1]
+                            - 0x20000005      0x5
+
+"P2", part 2 of 3:                          0x678
+  VTABLE             zero     0x20000400    0x26c  interrupt.o [4]
+  .bss               zero     0x2000066c      0x4  TCC_v1.o [1]
+  .bss               zero     0x20000670      0x4  TCC_v1.o [1]
+  .bss               zero     0x20000674      0x4  uartstdio.o [1]
+  .bss               zero     0x20000678      0x2  TCC_v1.o [1]
+  .bss               zero     0x2000067a      0x2  TCC_v1.o [1]
+  .bss               zero     0x2000067c      0x2  TCC_v1.o [1]
+  .bss               zero     0x2000067e      0x1  TCC_v1.o [1]
+                            - 0x2000067f    0x677
+
+"P2", part 3 of 3:                          0x200
+  .noinit            uninit   0x20000680    0x200  startup_ewarm.o [1]
+                            - 0x20000880    0x200
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x27f:
+          0x20000400  0x27f
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x8 (160% of destination):
+          0x0002714c    0x8
+    1 destination range, total size 0x5:
+          0x20000000    0x5
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+C:\Users\Cássio Augusto Rosso\Google Drive\Engenharia Elétrica\VIII Semestre\Microprocessadores II\Lab\CASSIOROSSO\LAB_ARM\PROJETOS\TCC_v1\Debug\Obj: [1]
+    TCC_v1.o           10 288  145 229       20
+    startup_ewarm.o        30      620      512
+    uartstdio.o            80       24        4
+    -------------------------------------------
+    Total:             10 398  145 873      536
+
+command line: [2]
+    -------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+driverlib.a: [4]
+    adc.o                 296
+    gpio.o                612
+    interrupt.o           160               620
+    ssi.o                  88
+    sysctl.o              824
+    systick.o              64
+    timer.o               198
+    uart.o                168
+    -------------------------------------------
+    Total:              2 410               620
+
+m7M_tls.a: [5]
+    DblAdd.o              376
+    DblMul.o              418
+    DblSub.o              210
+    DblToS32.o             58
+    U32ToDbl.o             26
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:              1 122
+
+rt7M_tl.a: [6]
+    cexit.o                10
+    cmain.o                26
+    copy_init3.o           44
+    cstartup_M.o           12
+    data_init.o            40
+    zero_init3.o           64
+    -------------------------------------------
+    Total:                196
+
+shb_l.a: [7]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                   14        4    1 016
+    Linker created                  39
+-----------------------------------------------
+    Grand Total:       14 168  145 916    2 172
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address     Size  Type      Object
+-----                      -------     ----  ----      ------
+.iar.init_table$$Base   0x000270a0            --   Gb  - Linker created -
+.iar.init_table$$Limit  0x000270c4            --   Gb  - Linker created -
+?main                   0x000270f1           Code  Gb  cmain.o [6]
+ADC1Value               0x2000066c      0x4  Data  Gb  TCC_v1.o [1]
+ADC1_S2_IntHandler      0x00021d35     0xc6  Code  Gb  TCC_v1.o [1]
+ADCHardwareOversampleConfigure
+                        0x00022c4d      0xe  Code  Gb  adc.o [4]
+ADCIntClear             0x00022b47      0xa  Code  Gb  adc.o [4]
+ADCIntEnable            0x00022b3d      0xa  Code  Gb  adc.o [4]
+ADCSequenceConfigure    0x00022b5b     0x52  Code  Gb  adc.o [4]
+ADCSequenceDataGet      0x00022c2f     0x1e  Code  Gb  adc.o [4]
+ADCSequenceEnable       0x00022b51      0xa  Code  Gb  adc.o [4]
+ADCSequenceStepConfigure
+                        0x00022bad     0x76  Code  Gb  adc.o [4]
+FaultISR                0x000270df      0x2  Code  Lc  startup_ewarm.o [1]
+GPIODirModeSet          0x0002241d     0x28  Code  Gb  gpio.o [4]
+GPIOPadConfigSet        0x00022445     0xfe  Code  Gb  gpio.o [4]
+GPIOPinConfigure        0x000225b3     0x38  Code  Gb  gpio.o [4]
+GPIOPinTypeADC          0x00022549      0x4  Code  Gb  gpio.o [4]
+GPIOPinTypeGPIOOutput   0x00022567      0xa  Code  Gb  gpio.o [4]
+GPIOPinTypeSSI          0x0002258b     0x14  Code  Gb  gpio.o [4]
+GPIOPinTypeUART         0x0002259f     0x14  Code  Gb  gpio.o [4]
+GPIOPinWrite            0x00022543      0x6  Code  Gb  gpio.o [4]
+Init_AD                 0x00021dfb     0x4e  Code  Gb  TCC_v1.o [1]
+Init_SSI0               0x0001f879     0x8a  Code  Gb  TCC_v1.o [1]
+Init_SSI3               0x0001f903     0x7c  Code  Gb  TCC_v1.o [1]
+Init_SysTickbegin       0x0001f715     0x1a  Code  Gb  TCC_v1.o [1]
+Init_Timer0             0x0001f743     0x40  Code  Gb  TCC_v1.o [1]
+Init_UART1              0x0001f819     0x60  Code  Gb  TCC_v1.o [1]
+IntDefaultHandler       0x000270e1      0x2  Code  Lc  startup_ewarm.o [1]
+IntEnable               0x000226f7     0x56  Code  Gb  interrupt.o [4]
+IntRegister             0x000226d1     0x26  Code  Gb  interrupt.o [4]
+NmiSR                   0x000270dd      0x2  Code  Lc  startup_ewarm.o [1]
+Region$$Table$$Base     0x000270a0            --   Gb  - Linker created -
+Region$$Table$$Limit    0x000270c4            --   Gb  - Linker created -
+ResetISR                0x000270c5     0x14  Code  Gb  startup_ewarm.o [1]
+SSIBusy                 0x000227bf      0xa  Code  Gb  ssi.o [4]
+SSIConfigSetExpClk      0x00022771     0x38  Code  Gb  ssi.o [4]
+SSIDataPut              0x000227b5      0xa  Code  Gb  ssi.o [4]
+SSIEnable               0x000227a9      0xc  Code  Gb  ssi.o [4]
+Send_To_DAC8411         0x0001f995     0x70  Code  Gb  TCC_v1.o [1]
+SycTickInt              0x0001f705     0x10  Code  Gb  TCC_v1.o [1]
+SysCtlClockGet          0x000220dd    0x110  Code  Gb  sysctl.o [4]
+SysCtlClockSet          0x00022005     0xd8  Code  Gb  sysctl.o [4]
+SysCtlDelay             0x00021ffd      0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralEnable  0x00021fdf      0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralPresent
+                        0x00021f75      0xa  Code  Gb  sysctl.o [4]
+SysCtlPeripheralReady   0x00021f7f      0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralReset   0x00021f9f     0x40  Code  Gb  sysctl.o [4]
+SysTickEnable           0x00021f35      0xc  Code  Gb  systick.o [4]
+SysTickIntEnable        0x00021f57      0xc  Code  Gb  systick.o [4]
+SysTickIntRegister      0x00021f41     0x16  Code  Gb  systick.o [4]
+SysTickPeriodSet        0x00021f63      0x8  Code  Gb  systick.o [4]
+TimerConfigure          0x000222b9     0x52  Code  Gb  timer.o [4]
+TimerControlTrigger     0x0002230b     0x40  Code  Gb  timer.o [4]
+TimerEnable             0x000222ad      0xc  Code  Gb  timer.o [4]
+TimerLoadSet            0x0002235d     0x10  Code  Gb  timer.o [4]
+UART1_IntHandler        0x0001f783     0x96  Code  Gb  TCC_v1.o [1]
+UARTCharGet             0x00022403      0xa  Code  Gb  uart.o [4]
+UARTClockSourceSet      0x00022417      0x6  Code  Gb  uart.o [4]
+UARTConfigSetExpClk     0x00022375     0x4c  Code  Gb  uart.o [4]
+UARTDisable             0x000223db     0x1e  Code  Gb  uart.o [4]
+UARTEnable              0x000223c1     0x1a  Code  Gb  uart.o [4]
+UARTIntClear            0x00022413      0x4  Code  Gb  uart.o [4]
+UARTIntEnable           0x0002240d      0x6  Code  Gb  uart.o [4]
+UARTStdioConfig         0x00022681     0x42  Code  Gb  uartstdio.o [1]
+Wait                    0x0001f72f     0x14  Code  Gb  TCC_v1.o [1]
+__aeabi_d2iz            0x00022b01           Code  Gb  DblToS32.o [5]
+__aeabi_dadd            0x00022989           Code  Gb  DblAdd.o [5]
+__aeabi_dmul            0x000227e5           Code  Gb  DblMul.o [5]
+__aeabi_ui2d            0x000227c9           Code  Gb  U32ToDbl.o [5]
+__cmain                 0x000270f1           Code  Gb  cmain.o [6]
+__exit                  0x00027121     0x14  Code  Gb  exit.o [7]
+__iar_copy_init3        0x00027029     0x2c  Code  Gb  copy_init3.o [6]
+__iar_dadd              0x00022c65           Code  Gb  DblSub.o [5]
+__iar_data_init3        0x00027055     0x28  Code  Gb  data_init.o [6]
+__iar_dsub              0x00022999           Code  Gb  DblAdd.o [5]
+__iar_dsubStart         0x000229ab           Code  Gb  DblAdd.o [5]
+__iar_init_vfp          0x0002707d           Code  Gb  fpinit_M.o [5]
+__iar_program_start     0x000270e3           Code  Gb  cstartup_M.o [6]
+__iar_systems$$module {Abs}
+                        0x00000001           Data  Gb  command line/config [2]
+__iar_zero_init3        0x00026fbd     0x40  Code  Gb  zero_init3.o [6]
+__low_level_init        0x0002710b      0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000    0x26c  Data  Gb  startup_ewarm.o [1]
+_call_main              0x000270fd           Code  Gb  cmain.o [6]
+_exit                   0x00027115           Code  Gb  cexit.o [6]
+_main                   0x00027107           Code  Gb  cmain.o [6]
+amostra_filtrada        0x2000067c      0x2  Data  Gb  TCC_v1.o [1]
+byte1_8411              0x0001f97f      0x8  Code  Gb  TCC_v1.o [1]
+byte2_8411              0x0001f987      0x8  Code  Gb  TCC_v1.o [1]
+byte3_8411              0x0001f98f      0x6  Code  Gb  TCC_v1.o [1]
+e30                     0x000264c4    0xa50  Data  Gb  TCC_v1.o [1]
+equalizador             0x20000004      0x1  Data  Gb  TCC_v1.o [1]
+exit                    0x0002710f      0x4  Code  Gb  exit.o [3]
+fir_highpass            0x00026f68     0x54  Data  Gb  TCC_v1.o [1]
+fir_highpass2           0x00026ffc     0x2c  Data  Gb  TCC_v1.o [1]
+fir_lowpass             0x00026f14     0x54  Data  Gb  TCC_v1.o [1]
+g_pfnRAMVectors         0x20000400    0x26c  Data  Lc  interrupt.o [4]
+g_pui32EnRegs           0x0002275c     0x14  Data  Lc  interrupt.o [4]
+g_pui32GPIOBaseAddrs    0x000225f0     0x90  Data  Lc  gpio.o [4]
+g_pui32Xtals            0x00022240     0x6c  Data  Lc  sysctl.o [4]
+g_ui32Base              0x20000674      0x4  Data  Lc  uartstdio.o [1]
+g_ui32UARTBase          0x00027134      0xc  Data  Lc  uartstdio.o [1]
+g_ui32UARTPeriph        0x00027140      0xc  Data  Lc  uartstdio.o [1]
+i                       0x2000067a      0x2  Data  Gb  TCC_v1.o [1]
+inicio                  0x0000026c  0x1c7a0  Data  Gb  TCC_v1.o [1]
+k20_1925                0x0002467c   0x1348  Data  Gb  TCC_v1.o [1]
+lancer_987              0x00022d38   0x1944  Data  Gb  TCC_v1.o [1]
+main                    0x00021e49     0x92  Code  Gb  TCC_v1.o [1]
+millis                  0x20000670      0x4  Data  Gb  TCC_v1.o [1]
+mr2_1632                0x000259c4    0xb00  Data  Gb  TCC_v1.o [1]
+play_e30_1793rpm        0x0001faf5    0x726  Code  Gb  TCC_v1.o [1]
+play_k20_1925           0x00020f51    0x6dc  Code  Gb  TCC_v1.o [1]
+play_lancer_987         0x000202d5    0x6b2  Code  Gb  TCC_v1.o [1]
+play_mr2_1632rpm        0x000209a1    0x5a8  Code  Gb  TCC_v1.o [1]
+play_shelby_1636        0x00021645    0x6e6  Code  Gb  TCC_v1.o [1]
+pui32Stack              0x20000680    0x200  Data  Lc  startup_ewarm.o [1]
+rpm                     0x20000000      0x2  Data  Gb  TCC_v1.o [1]
+rpm_ad                  0x20000678      0x2  Data  Gb  TCC_v1.o [1]
+shelby_1636             0x0001ca0c   0x2cf8  Data  Gb  TCC_v1.o [1]
+som                     0x20000003      0x1  Data  Gb  TCC_v1.o [1]
+tempo                   0x20000002      0x1  Data  Gb  TCC_v1.o [1]
+tempo_e30_1793rpm       0x0001fa05     0x30  Code  Gb  TCC_v1.o [1]
+tempo_k20_1925          0x0001fa95     0x30  Code  Gb  TCC_v1.o [1]
+tempo_lancer_987        0x0001fa35     0x30  Code  Gb  TCC_v1.o [1]
+tempo_mr2_1632rpm       0x0001fa65     0x30  Code  Gb  TCC_v1.o [1]
+tempo_shelby_1636       0x0001fac5     0x30  Code  Gb  TCC_v1.o [1]
+volume                  0x2000067e      0x1  Data  Gb  TCC_v1.o [1]
+
+
+[1] = C:\Users\Cássio Augusto Rosso\Google Drive\Engenharia Elétrica\VIII Semestre\Microprocessadores II\Lab\CASSIOROSSO\LAB_ARM\PROJETOS\TCC_v1\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = driverlib.a
+[5] = m7M_tls.a
+[6] = rt7M_tl.a
+[7] = shb_l.a
+
+   14 168 bytes of readonly  code memory
+  145 916 bytes of readonly  data memory
+    2 172 bytes of readwrite data memory
+
+Errors: none
+Warnings: 1
