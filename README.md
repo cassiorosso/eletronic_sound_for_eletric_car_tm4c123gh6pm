@@ -1,2 +1,7 @@
-# eletronic_sound_for_eletric_car_tm4c123g6pm
+# Eletronic exhaust sound for eletric car using TM4C123GH6PM ARM 32-bit
  My final project on eletrical engineering graduation
+
+ ## Abstract
+
+The replacement of the internal combustion engine for the electric motor it’s already happening in big urban centers due to the remarkable growth of electric cars production. Analyzing this rise, there are several discussions about the potential risk of pedestrian accidents caused by electric vehicles due to their quiet characteristics, which have considerably reduced noise because they dispense the combustion process and cause less mechanical noise compared to the traditional combustion engines. With this in mind in this work was developed an electronic system for electric cars capable of simulate a combustion engine sound. Sound generation is performed by TM4C123GH6PM microcontroller which contains cycles of the desired digital signal in memory. These signals will have their sampling frequency changed in real time, resulting in simulation of motor’s rotation acceleration and deceleration. Until sound reproduction, the signal passes through digital/analog conversion by 16-bit DAC per SPI protocol, analog reconstruction filter and automatic volume adjustment by a digital potentiometer. The parameter responsible for providing this variation in sound is the voltage level obtained through an electronic accelerator pedal. For more system interaction with the user, an Android app was developed with Bluetooth communication. Through this app it’s possible to choose which vehicle sound to perform and the digital filtering options by FIR filter.
+Keywords: Sample frequency, DAC, Electric car, Combustion engine, Electronic throttle, Engine noise, Sallen key, FIR filter.
